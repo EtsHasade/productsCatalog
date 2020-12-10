@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { storesStore } from './module/stores-store.js'
+import { shopStore } from './module/shop-store.js'
 
 Vue.use(Vuex)
 
@@ -9,6 +9,6 @@ export default new Vuex.Store({
     mutations: {},
     actions: {},
     modules: {
-        storesStore
+        shopStore
     }
 })

@@ -1,7 +1,7 @@
 <template>
     <ul>
         <section v-for="shop in shops" :key="shop.StoreId">
-           <product-preview v-for="product in productsToShow" :key="product.ProductId" :shop="shop" :product="product"></product-preview>
+           <product-preview v-for="product in productsToShow[shop.StoreId]" :key="product.ProductId" :shop="shop" :product="product"></product-preview>
         </section>
     </ul>
 </template>
@@ -17,13 +17,17 @@ export default {
     computed: {
         productsToShow() {
             var products = {}
-            shops.forEach(shop => {
+            this.shops.forEach(shop => {
                 products[shop.StoreId] = shop.Products.filter(product => {
                     return (this.filterBy.byGender === 'both' || this.filterBy.byGender === product.tagGender ) && 
                             (product.Price >= this.filterBy.price.from && product.Price < this.filterBy.price.to)
                 })
             })
+            return products
         }
+    },
+    components: {
+        productPreview
     }
     
 }
