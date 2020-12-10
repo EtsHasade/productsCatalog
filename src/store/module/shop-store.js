@@ -1,6 +1,6 @@
 import { shopService } from '../../service/shop-service.js'
 
-export const shopsStore = {
+export const shopStore = {
     state: {
         shops: [],
         products: []
