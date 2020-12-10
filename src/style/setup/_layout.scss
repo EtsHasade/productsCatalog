@@ -8,5 +8,28 @@
     >*{
         box-shadow: 0 2px 3px #0000007c;
         padding: 5px;
+
+        & .img-container {
+            width: 100%;
+            padding-top: 70%;
+            position: relative;
+            margin-bottom: 8px;
+            img {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        h3{
+            font-size: 0.9rem;
+            color: #242424;
+        }
     }
 }
