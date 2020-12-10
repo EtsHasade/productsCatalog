@@ -1,32 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-header />
+    <product-filter @doFilter="setFilter" />
+    <product-list :products="productsToShow">
+    <app-footer />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import productFilter from './cmp/product-filter.vue'
+import productList from './cmp/product-list.vue'
+import appHeader from './views/app-header.vue'
+import appFooter from './views/app-footer.vue'
+export default {
+  name: 'App',
+  computed: {
+    productsToShow() {
+      const stores = this.$store.getters.storesToShow
     }
+  },
+
+  components: {
+    productList,
+    productFilter,
+    appHeader,
+    appFooter
   }
 }
+</script>
+
+
+<style lang="scss">
 </style>
