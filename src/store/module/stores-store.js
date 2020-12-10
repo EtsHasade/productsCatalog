@@ -7,6 +7,14 @@ export const storesStore = {
     getters: {
         storesToShow() {
             return state.stores
+        },
+        productsToShow() {
+            const shops = state.stores
+            const products = []
+            shops.forEach(shop => {
+                products.push(...shop.Products)
+            })
+            return products
         }
     },
     mutations: {
