@@ -1,15 +1,16 @@
-import { storeService } from '../../service/store-service.js'
+import { shopService } from '../../service/shop-service.js'
 
-export const storesStore = {
+export const shopsStore = {
     state: {
-        stores: [],
+        shops: [],
+        products: []
     },
     getters: {
-        storesToShow() {
-            return state.stores
+        shopsToShow(state) {
+            return state.shops
         },
-        productsToShow() {
-            const shops = state.stores
+        productsToShow(state) {
+            const shops = state.shops
             const products = []
             shops.forEach(shop => {
                 products.push(...shop.Products)
@@ -18,15 +19,15 @@ export const storesStore = {
         }
     },
     mutations: {
-        setStores(state, { stores }) {
-            state.stores = stores
+        setShops(state, { shops }) {
+            state.shops = shops
         }
     },
     actions: {
-        async setStores({ commit }) {
+        async setShops({ commit }) {
             try {
-                const stores = await storeService.query()
-                commit({ type: 'setStores', stores })
+                const shops = await shopService.query()
+                commit({ type: 'setShops', shops })
             } catch (err) {
                 console.log('err', err);
             }
