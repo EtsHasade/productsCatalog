@@ -8,8 +8,8 @@
 
 <script>
 
-import productFilter from './cmp/product-filter.vue'
-import productList from './cmp/product-list.vue'
+// import productFilter from './cmp/product-filter.vue'
+// import productList from './cmp/product-list.vue'
 // import appHeader from './cmp/app-header.vue'
 import productApp from './views/product-app'
 // import appFooter from './cmp/app-footer.vue'

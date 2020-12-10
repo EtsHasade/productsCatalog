@@ -3,4 +3,10 @@
 .card-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+
+    >*{
+        box-shadow: 0 2px 3px #0000007c;
+        padding: 5px;
+    }
 }
