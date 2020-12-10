@@ -1,9 +1,9 @@
 <template>
-    <ul>
-        <section v-for="shop in shops" :key="shop.StoreId">
+    <section>
+        <ul v-for="shop in shops" :key="shop.StoreId" class="card-grid">
            <product-preview v-for="product in productsToShow[shop.StoreId]" :key="product.ProductId" :shop="shop" :product="product"></product-preview>
-        </section>
-    </ul>
+        </ul>
+    </section>
 </template>
 
 <script>
