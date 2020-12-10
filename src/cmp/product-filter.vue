@@ -10,6 +10,7 @@
               <option value="1">up to $25</option>
               <option value="2">$25 - $50</option>
               <option value="3">$50+</option>
+              <option value="4" selected >All</option>
           </select>
       </form>
   </section>
@@ -35,6 +36,9 @@ export default {
                 this.filterBy.price.to = 50
             } else if(this.price === '3') {
                 this.filterBy.price.from = 50
+            } else if(this.price === '4') {
+                this.filterBy.price.from = 0
+                this.filterBy.price.to = 100
             }
         }
         this.$emit("doFilter", JSON.parse(JSON.stringify(this.filterBy)));
