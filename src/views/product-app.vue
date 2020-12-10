@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      filterBy: { byGender: 'both', price: { from: 0, to: Infinity } }
+      filterBy: { byGender: 'both', price: { from: 0, to: 100 } }
     }
   },
   computed: {
