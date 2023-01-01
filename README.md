@@ -1,5 +1,9 @@
 # products-catalog
 
+My basic template for:
+Frontend - Vue2 + Vuex
+Backend - Node + express + MongoDB
+
 ## Project setup
 ```
 npm install
